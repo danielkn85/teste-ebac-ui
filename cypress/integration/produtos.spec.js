@@ -17,14 +17,16 @@ describe('Funcionality Products homepage', () => {
     });
 
     it.only('Must add a product to the cart', () => {
+        var quantidade = 2
+
         cy.get('[class="product-block grid"]')
             .contains('Ariel Roll Sleeve Sweatshirt').click()
-        cy.get('.button-variable-item-M').click()
+        cy.get('.button-variable-item-L').click()
         cy.get('.button-variable-item-Purple').click()
-        cy.get('.input-text').clear().type(3)
+        cy.get('.input-text').clear().type(quantidade)
         cy.get('.single_add_to_cart_button').click()
 
-        cy.get('.dropdown-toggle > .mini-cart-items').should('contain', 3)
+        cy.get('.dropdown-toggle > .mini-cart-items').should('contain', quantidade)
 
     });
 
