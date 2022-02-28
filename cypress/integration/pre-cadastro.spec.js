@@ -4,7 +4,7 @@ var faker = require('faker');
 describe('Pre-Register Funcionality', () => {
 
     beforeEach(() => {
-        cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
+        cy.visit('minha-conta')
     });
 
     it('Must complete the pre-registration successfully', () => {
@@ -12,7 +12,7 @@ describe('Pre-Register Funcionality', () => {
         let emailFaker = faker.internet.email()
         let nomeFaker = faker.name.firstName()
         let sobrenomeFaker = faker.name.lastName()
-        
+
         cy.get('#reg_email').type(emailFaker)
         cy.get('#reg_password').type('Palmeiras@q1w2e3!!')
         cy.get(':nth-child(4) > .button').click()
