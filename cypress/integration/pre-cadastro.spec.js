@@ -7,7 +7,7 @@ describe('Pre-Register Funcionality', () => {
         cy.visit('minha-conta')
     });
 
-    it('Must complete the pre-registration successfully', () => {
+    it('Should complete the pre-registration successfully', () => {
 
         let emailFaker = faker.internet.email()
         let nomeFaker = faker.name.firstName()
@@ -24,6 +24,11 @@ describe('Pre-Register Funcionality', () => {
 
         cy.get('.woocommerce-message').should('contain', 'Detalhes da conta modificados com sucesso.')
 
+    });
+
+    it('Should complete the pre-registration succesfully using custom commands', () => {
+        let emailFaker2 = faker.internet.email()
+        cy.preCadastro(emailFaker2, 'senha!@#forte', 'Daniel', 'Nakirimoto')
     });
 
 

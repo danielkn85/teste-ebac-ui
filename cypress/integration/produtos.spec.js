@@ -30,4 +30,8 @@ describe('Funcionality Products homepage', () => {
 
     });
 
+    it('Should add products to cart - using custom commands', () => {
+        cy.addProdutos('Aero Daily Fitness Tee', 'L', 'Black', 2)
+    });
+
 });
